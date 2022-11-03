@@ -1,0 +1,5 @@
+aws-region = "us-east-1"
+instance-ami = "ami-09d3b3274b6c5d4aa"
+instance-type = "t2.micro"
+instance-key-name = "key-pair"
+instance-associate-public-ip = "true"
