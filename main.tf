@@ -1,8 +1,8 @@
 provider "aws" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
+  #access_key = "${var.access_key}"
+  #secret_key = "${var.secret_key}"
   region  = "${var.aws-region}"
-  #profile = "${var.aws-profile}"
+  profile = "${var.aws-profile}"
 }
 
 resource "aws_vpc" "vpc" {
