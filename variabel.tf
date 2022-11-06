@@ -1,20 +1,20 @@
-# variable "access_key" {
-#   type = string
-# }
-# variable "secret_key" {
-#   type = string
-# }
+variable "access_key" {
+  type = string
+}
+variable "secret_key" {
+  type = string
+}
 
 variable "aws-region" {
   description = "The AWS region"
   type        = string
 }
 
-variable "aws-profile" {
-  description = "The name of the AWS shared credentials account."
-  type        = string
-  default = "aws-key"
-}
+# variable "aws-profile" {
+#   description = "The name of the AWS shared credentials account."
+#   type        = string
+#   default = "aws-key"
+# }
 
 variable "instance-ami" {
   description = "The AMI (Amazon Machine Image) that identifies the instance"
