@@ -4,7 +4,7 @@
 # systemctl start httpd.service
 # systemctl enable httpd.service
 # sudo su
-# echo "Hello everyone" >> /var/www/html/index.html
+# echo "Hello Developers" >> /var/www/html/index.html
 
 # #!/bin/bash
 # yum update -y

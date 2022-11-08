@@ -47,11 +47,11 @@ variable "instance-associate-public-ip" {
   default     = true
 }
 
-variable "user-data-script" {
-  description = "The filepath to the user-data script, that is executed upon spinning up the instance"
-  type        = string
-  default     = ""
-}
+# variable "user-data-script" {
+#   description = "The filepath to the user-data script, that is executed upon spinning up the instance"
+#   type        = string
+#   default     = ""
+# }
 
 variable "instance-tag-name" {
   description = "instance-tag-name"
