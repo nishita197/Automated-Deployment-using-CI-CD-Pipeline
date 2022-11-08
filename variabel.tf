@@ -1,13 +1,14 @@
-variable "access_key" {
-  type = string
-}
-variable "secret_key" {
-  type = string
-}
+# variable "access_key" {
+#   type = string
+# }
+# variable "secret_key" {
+#   type = string
+# }
 
 variable "aws-region" {
   description = "The AWS region"
   type        = string
+  default     = "us-east-1"
 }
 
 # variable "aws-profile" {
@@ -19,16 +20,19 @@ variable "aws-region" {
 variable "instance-ami" {
   description = "The AMI (Amazon Machine Image) that identifies the instance"
   type        = string
+  default     = "ami-09d3b3274b6c5d4aa"
 }
 
 variable "instance-type" {
   description = "The instance type to be used"
   type        = string
+  default     = "t2.micro"
 }
 
 variable "instance-key-name" {
   description = "The name of the SSH key to associate to the instance. Note that the key must exist already."
   type        = string
+  default     = "key-pair"
 }
 
 # variable "iam-role-name" {
@@ -40,6 +44,7 @@ variable "instance-key-name" {
 variable "instance-associate-public-ip" {
   description = "Defines if the EC2 instance has a public IP address."
   type        = string
+  default     = true
 }
 
 variable "user-data-script" {
