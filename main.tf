@@ -95,15 +95,15 @@ resource "aws_instance" "instance" {
  
   key_name                    = "${var.instance-key-name != "" ? var.instance-key-name : ""}"
   associate_public_ip_address = "${var.instance-associate-public-ip}"
-  user_data  = << EOF
-                  #!/bin/bash
-                  yum update -y
-                  yum install -y httpd.x86_64
-                  systemctl start httpd.service
-                  systemctl enable httpd.service
-                  sudo su
-                  echo “Hello everyone” > /var/www/html/index.html
-                EOF
+  user_data                   = <<EOF
+                                #!/bin/bash
+                                yum update -y
+                                yum install -y httpd.x86_64
+                                systemctl start httpd.service
+                                systemctl enable httpd.service
+                                sudo su
+                                echo ?Hello everyone? > /var/www/html/index.html
+                                EOF
 
   # user_data = "${file("script.sh")}"
   # user_data                   = "${file("${var.user-data-script}")}"
