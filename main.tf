@@ -95,6 +95,14 @@ resource "aws_instance" "instance" {
  
   key_name                    = "${var.instance-key-name != "" ? var.instance-key-name : ""}"
   associate_public_ip_address = "${var.instance-associate-public-ip}"
+ user_data = << EOF
+#! /bin/bash
+sudo apt-get update
+sudo apt-get install -y apache2
+sudo systemctl start apache2
+sudo systemctl enable apache2
+echo "The page was created by the user data" | sudo tee /var/www/html/index.html
+EOF
 	# user_data = << EOF
 	# 	#! /bin/bash
   #   sudo apt-get update
@@ -104,7 +112,7 @@ resource "aws_instance" "instance" {
 	# 	echo ?<h1>Deployed via Terraform</h1>? | sudo tee /var/www/html/index.html
 	# EOF
 
-  user_data = "${file("script.sh")}"
+  # user_data = "${file("script.sh")}"
   # user_data                   = "${file("${var.user-data-script}")}"
   # user_data                   = "${var.user-data-script != "" ? file("${var.user-data-script}") : ""}"
   vpc_security_group_ids      = ["${aws_security_group.sg.id}"]
