@@ -97,7 +97,6 @@ resource "aws_instance" "instance" {
   associate_public_ip_address = "${var.instance-associate-public-ip}"
   user_data = <<-EOF
   #! /bin/bash
-  echo "loaded"
   sudo apt-get update
   sudo apt-get install -y apache2
   sudo systemctl start apache2
